@@ -44,7 +44,7 @@ const Chatbox = ({ aiId, onClose }) => {
           placeholder="Write something..."
           onKeyDown={(e) => {
             if (e.key === "Enter" && !e.shiftKey) {
-              e.preventDefault(); // Ne küldje el az üzenetet Enter megnyomásakor
+              e.preventDefault(); 
               sendMessage();
             }
           }}
