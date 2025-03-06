@@ -33,7 +33,7 @@ const Contact = () => {
       <LinksContainer>
         <p><Link href="mailto:ludwighone@gmail.com">ludwighone@gmail.com</Link></p>
         <p><Link href="https://linkedin.com/in/henrik-sturcz-90b257351" target="_blank" rel="noopener noreferrer">LinkedIn</Link></p>
-        <p><Link href="https://github.com/tegithubod" target="_blank" rel="noopener noreferrer">GitHub</Link></p>
+        <p><Link href="https://github.com/henriksturcz" target="_blank" rel="noopener noreferrer">GitHub</Link></p>
       </LinksContainer>
     </ContactSection>
   );

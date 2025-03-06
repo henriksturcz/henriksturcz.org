@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Chatbox from "../components/Chatbox";
-import ImageGenerator from "../components/ImageGenerator";  // Új AI importálása
 
 const Container = styled.div`
   text-align: center;
