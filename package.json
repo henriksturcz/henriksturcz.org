@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@fontsource/nunito": "^5.1.1",
-    "concurrently": "^9.1.2",
     "framer-motion": "^12.4.3",
     "lucide-react": "^0.475.0",
     "react": "^18.3.1",
@@ -18,14 +17,14 @@
     "typeface-roboto": "^1.1.13"
   },
   "scripts": {
-  "start": "concurrently \"npm run start-react\" \"npm run start-backend\" \"npm run start-server\"",
-  "start-react": "react-scripts start",
-  "start-backend": "python src/components/app.py",
-  "start-server": "python server.py", 
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject"
-},
+    "start": "concurrently \"npm run start-react\" \"npm run start-backend\" \"npm run start-server\"",
+    "start-react": "react-scripts start",
+    "start-backend": "python src/components/app.py",
+    "start-server": "python server.py",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -40,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import GridBackground from "./GridBackground"; // ✅ Eredeti háttér megtartva
+import GridBackground from "./GridBackground"; 
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import "typeface-open-sans";
@@ -115,9 +115,9 @@ const ProjectCard = styled(motion.div)`
 `;
 
 const projects = [
-  { title: "Webpages", description: "React, JavaScript, HTML, CSS", path: "/" },
-  { title: "Apps", description: "C++", path: "/apps" },
-  { title: "AI", description: "Python", path: "/ai" }, // ✅ AI oldalra navigálás
+  { title: "Webpages", description: "React, JavaScript, HTML, CSS", path: "/webpages" },
+  { title: "Projects", description: "C++", path: "/apps" },
+  { title: "AI", description: "Python", path: "/ai" }, 
   { title: "Robotics and Sensors", path: "/robotics" },
 ];
 
@@ -127,7 +127,7 @@ const Projects = () => {
 
   const handleNavigation = (path) => {
     navigate(path);
-    window.location.reload(); // ⬅️ Kényszeríti az oldal frissítését
+    window.location.reload(); 
   };
 
   return (
@@ -140,7 +140,7 @@ const Projects = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.3 }}
-          onClick={() => handleNavigation(project.path)} // ✅ Most frissít is!
+          onClick={() => handleNavigation(project.path)} 
         >
           <h3 className="notititle">{project.title}</h3>
           <p className="notibody">{project.description}</p>

@@ -9,16 +9,16 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html, body {
-    min-height: 100vh; /* 🔥 A teljes képernyő magasságát biztosítja */
+    min-height: 100vh; 
     width: 100%;
-    overflow-x: hidden; /* 🔥 Megakadályozza a vízszintes görgetést */
+    overflow-x: hidden; 
   }
 
   body {
     background: linear-gradient(135deg, #076585, #fff);
     color: white;
-    background-repeat: no-repeat; /* 🔥 Nem ismétlődik a háttér */
-    background-attachment: fixed; /* 🔥 Fix háttér, hogy ne mozogjon görgetéskor */
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
   }
 
   a {

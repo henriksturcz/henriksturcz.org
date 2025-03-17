@@ -10,11 +10,11 @@ const BioSection = styled.section`
   align-items: center;
   justify-content: space-between;
   padding: 50px 80px;
-  background: rgba(255, 255, 255, 0.1); /* Fehér áttetsző háttér */
+  background: rgba(255, 255, 255, 0.1); 
   color: #fff;
   font-family: "Open Sans", sans-serif;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px); /* Ha szeretnéd az elmosódott hátteret */
+  backdrop-filter: blur(10px); 
 `;
 
 const BioContent = styled.div`
@@ -43,7 +43,7 @@ const SkillsContainer = styled.div`
 
 const SkillItem = styled(motion.div)`
   width: 250px;
-  background: rgba(255, 255, 255, 0.7); /* Fehér áttetsző háttér */
+  background: rgba(255, 255, 255, 0.7); 
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -79,7 +79,7 @@ const skills = [
 const Bio = () => {
   return (
     <BioSection>
-      {/* Bal oldal: Szöveg */}
+      
       <BioContent>
         <BioTitle>About Me</BioTitle>
         <BioText
@@ -96,7 +96,7 @@ const Bio = () => {
         </BioText>
       </BioContent>
 
-      {/* Jobb oldal: Programozási nyelvek */}
+      
       <SkillsContainer>
         {skills.map((skill, index) => (
           <SkillItem

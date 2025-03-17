@@ -15,13 +15,13 @@ const HeroSection = styled.section`
 
 const Title = styled(motion.h1)`
   font-size: 3rem;
-  font-weight: 300; /* Használjuk a vékonyabb változatot */
+  font-weight: 300; 
 `;
 
 const Subtitle = styled(motion.p)`
   font-size: 1.5rem;
   margin-top: 10px;
-  font-weight: 300; /* Szintén a vékonyabb változat */
+  font-weight: 300; 
 `;
 
 const Hero = () => {

@@ -44,7 +44,7 @@ const Chatbox = ({ aiId, onClose }) => {
           placeholder="Write something..."
           onKeyDown={(e) => {
             if (e.key === "Enter" && !e.shiftKey) {
-              e.preventDefault(); // Ne küldje el az üzenetet Enter megnyomásakor
+              e.preventDefault(); 
               sendMessage();
             }
           }}
@@ -57,7 +57,7 @@ const Chatbox = ({ aiId, onClose }) => {
 
 export default Chatbox;
 
-// Styled Components
+
 const ChatContainer = styled.div`
   font-family: "Open Sans", sans-serif;
   background: white;
@@ -93,7 +93,7 @@ const Message = styled.p`
   font-family: "Open Sans", sans-serif;
   background: ${(props) => (props.sender === "user" ? " #11a7d9" : "#fff")};
   color: ${(props) => (props.sender === "user" ? "white" : "black")};
-  padding: ${(props) => (props.sender === "user" ? "12px" : "8px")};  /* Növelt padding a felhasználó üzenetéhez */
+  padding: ${(props) => (props.sender === "user" ? "12px" : "8px")};  
   border-radius: 10px;
   margin-bottom: 5px;
   text-align: ${(props) => (props.sender === "user" ? "right" : "left")};
@@ -113,8 +113,8 @@ const ChatInput = styled.div`
     flex: 1;
     border-radius:10px;
     padding: 8px;
-    resize: none;  /* Ne lehessen átméretezni */
-    height: 50px;  /* Alap magasság */
+    resize: none;  
+    height: 50px;  
   }
 
   button {
