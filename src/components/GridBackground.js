@@ -77,7 +77,6 @@ const GridBackground = ({ parentRef }) => {
     return () => observer.disconnect();
   }, [parentRef]);
 
-  // 🔥 Simított egérmozgás, hogy az ikonok animáltan változzanak
   useEffect(() => {
     let animationFrame;
     const smoothUpdate = () => {

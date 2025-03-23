@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Chatbox = ({ aiId, onClose }) => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const [underConstruction] = useState(true);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -29,28 +30,36 @@ const Chatbox = ({ aiId, onClose }) => {
   return (
     <ChatContainer>
       <CloseButton onClick={onClose}>×</CloseButton>
-      <h3>{aiId.toUpperCase()}</h3>
-      <ChatMessages>
-        {messages.map((msg, index) => (
-          <Message key={index} sender={msg.sender}>
-            {msg.text}
-          </Message>
-        ))}
-      </ChatMessages>
-      <ChatInput>
-        <textarea
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Write something..."
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && !e.shiftKey) {
-              e.preventDefault(); 
-              sendMessage();
-            }
-          }}
-        />
-        <button onClick={sendMessage}>➤</button>
-      </ChatInput>
+        <h3>{aiId.toUpperCase()}</h3>
+
+        {underConstruction ? (
+          <UnderConstructionMessage>🚧 Sorry! This feature is under construction 🚧</UnderConstructionMessage>
+        ) : (
+          <>
+            <ChatMessages>
+              {messages.map((msg, index) => (
+                <Message key={index} sender={msg.sender}>
+                  {msg.text}
+                </Message>
+              ))}
+            </ChatMessages>
+
+            <ChatInput>
+              <textarea
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Write something..."
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault(); 
+                    sendMessage();
+                  }
+                }}
+              />
+              <button onClick={sendMessage}>➤</button>
+            </ChatInput>
+          </>
+        )}
     </ChatContainer>
   );
 };
@@ -80,6 +89,17 @@ const CloseButton = styled.div`
   font-size: 30px;
 `;
 
+const UnderConstructionMessage = styled.div`
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  color: black;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: ##11a7d9;
+  border-radius: 10px;
+  text-align: center;
+`;
+
 const ChatMessages = styled.div`
   font-family: "Open Sans", sans-serif;
   height: 200px;
@@ -93,15 +113,15 @@ const Message = styled.p`
   font-family: "Open Sans", sans-serif;
   background: ${(props) => (props.sender === "user" ? " #11a7d9" : "#fff")};
   color: ${(props) => (props.sender === "user" ? "white" : "black")};
-  padding: ${(props) => (props.sender === "user" ? "12px" : "8px")};  
+  padding: ${(props) => (props.sender === "user" ? "12px" : "8px")};
   border-radius: 10px;
   margin-bottom: 5px;
   text-align: ${(props) => (props.sender === "user" ? "right" : "left")};
-  width: ${(props) => (props.sender === "user" ? "auto" : "fit-content")}; 
-  max-width: 500px; 
-  margin-left: ${(props) => (props.sender === "user" ? "auto" : "0")};  
-  white-space: pre-wrap; 
-  word-wrap: break-word;  
+  width: ${(props) => (props.sender === "user" ? "auto" : "fit-content")};
+  max-width: 500px;
+  margin-left: ${(props) => (props.sender === "user" ? "auto" : "0")};
+  white-space: pre-wrap;
+  word-wrap: break-word;
 `;
 
 const ChatInput = styled.div`
