@@ -101,6 +101,35 @@ const Description = styled.p`
   color: #555;
 `;
 
+const ProgressBarContainer = styled.div`
+  width: 100%;
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+`;
+
+const ProgressBar = styled.div`
+  height: 100%;
+  background: ${({ progress }) =>
+    progress < 4 ? "#eee" : 
+    progress < 7 ? "black" : 
+    "  #076585"};
+  width: ${({ progress }) => progress * 10}%;
+  transition: width 0.5s ease-in-out;
+`;
+
+const ProgressLabel = styled.span`
+  display: block;
+  text-align: left;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+`;
+
 const GitHubLink = styled.a`
   display: inline-block;
   margin-top: 15px;
@@ -125,6 +154,7 @@ const projects = [
     description: "A C++ program that can sort text and spreadsheet files in a terminal-like environment. It is capable of exporting data to different formats, making it easier to review and process.",
     images: [image1],
     githubUrl: "https://github.com/henriksturcz/FileSorter",
+    progress: 8,
   },
   {
     id: "kinematic-simulator",
@@ -132,6 +162,7 @@ const projects = [
     description: "A basic C++ simulator that helps visualize the movement of robotic arms based on kinematic equations. It can be useful for automation and robotics projects.",
     images: [image2],
     githubUrl: "https://github.com/henriksturcz/ForwardKinematicSimulator",
+    progress: 10,
   },
   {
     id: "path-finder",
@@ -139,6 +170,7 @@ const projects = [
     description: "A C++ simulator that visualize the movement of robots in maps and find paths. It can be useful for robotic movement and try simulating pathfinding with algorithms.",
     images: [image3, image4],
     githubUrl: "https://github.com/henriksturcz/PathFinder",
+    progress: 8,
   },
 ];
 
@@ -180,6 +212,10 @@ const Apps = () => {
             <Content>
               <ProjectTitle>{project.name}</ProjectTitle>
               <Description>{project.description}</Description>
+              <ProgressBarContainer>
+                <ProgressBar progress={project.progress} />
+              </ProgressBarContainer>
+              <ProgressLabel>Progress: {project.progress} / 10</ProgressLabel>
               <GitHubLink href={project.githubUrl} target="_blank">
                 View on GitHub
               </GitHubLink>
